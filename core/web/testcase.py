@@ -4,7 +4,7 @@ from core.template import Template
 from core.web.collector import WebOperationCollector
 from core.web.teststep import WebTestStep
 from tools.utils.utils import get_case_message, handle_operation_data, handle_params_data
-
+from webdriver_manager.chrome import ChromeDriverManager
 
 class WebTestCase:
     def __init__(self, test):
@@ -111,7 +111,7 @@ class WebTestCase:
                 return webdriver.Remote(command_executor=self.test.driver.browser_path,
                                         desired_capabilities=caps, options=opt)
             else:
-                return webdriver.Chrome(executable_path=self.test.driver.browser_path, options=opt)
+                return webdriver.Chrome(executable_path=ChromeDriverManager().install(), options=opt)
         else:
             if old_driver is not None:
                 return old_driver

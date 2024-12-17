@@ -23,3 +23,5 @@ cx_Oracle==8.3.0
 psycopg2==2.9.5
 ws4py~=0.5.1
 websocket~=0.2.1
+webdriver-manager==4.0.2
+
